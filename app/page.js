@@ -29,7 +29,7 @@ export default function Home() {
       Hello from the new app
       <div>
         {blogs.map((blog) => (
-          <Link href={"/blogs/" + blog.slug} passHref key={blog.slug}>
+          <Link href={"/blog/" + blog.slug} passHref key={blog.slug}>
             <div className="py-2 flex justify-between align-middle gap-2">
               <div>
                 <h3 className="text-lg font-bold">{blog.meta.title}</h3>
