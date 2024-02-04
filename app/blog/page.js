@@ -20,7 +20,7 @@ const Blog = async () => {
     >
       <div>
         {blogs.map((blog) => (
-          <Link href={"/blog/" + blog.slug} passHref key={blog.slug}>
+          <Link href={"/blog/" + blog.slug} key={blog.slug}>
             <div className="py-2 px-4 flex justify-between items-end gap-2 border-b border-zinc-400">
               <div>
                 <h3 className="text-lg font-bold">{blog.meta.title}</h3>

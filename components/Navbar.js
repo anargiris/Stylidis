@@ -7,7 +7,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="mb-5">
+    <nav className="mb-8">
       <ol className="flex justify-center items-center gap-4">
         {["/", "/work", "/blog", "/contact"].map((link) => {
           const isActive = link === pathname;
