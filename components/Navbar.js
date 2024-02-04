@@ -33,8 +33,7 @@ const Navbar = () => {
                   transition={{
                     type: "spring",
                     bounce: 0.25,
-                    duration: 0.6,
-                    delay: 0.1,
+                    duration: 0.5,
                   }}
                 />
               )}
