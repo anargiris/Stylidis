@@ -27,7 +27,7 @@ const Navbar = () => {
               </span>
               {isActive && (
                 <motion.div
-                  className="absolute bottom-0 left-0 h-full w-full mx-auto dark:bg-[#f8f7ff] bg-[#323232] rounded-md -z-10"
+                  className="absolute bottom-0 left-0 h-full w-full mx-auto dark:bg-[#f8f7ff] bg-[#323232] rounded-md -z-10 "
                   layoutId="navbar"
                   aria-hidden="true"
                   transition={{
