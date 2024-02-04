@@ -1,4 +1,5 @@
 import { MotionDiv } from "@/components/Motion/MotionDiv";
+import TechnologiesList from "@/components/TechnologiesList";
 
 export default function Home() {
   return (
@@ -16,10 +17,21 @@ export default function Home() {
         },
       }}
     >
-      <h1 className="text-xl font-medium mb-2">
+      <h1 className="text-2xl font-semibold mb-1">
         Hey, I'm Anargyros. A web developer.
       </h1>
-      <h2>I build web applications and sometimes they don't break.</h2>
+      <h2 className="mb-5 text-lg">
+        I build web applications and sometimes they don't break.
+      </h2>
+      <p className="mb-5 w-2/3">
+        I am a constant follower of the rapidly evolving ecosystem of web
+        development and adapt to the latest changes. My main focus is on the
+        frontend but have good experience on the backend too.
+      </p>
+      <div>
+        <p className="text-sm mb-2">Some of the technologies I like to use:</p>
+        <TechnologiesList />
+      </div>
     </MotionDiv>
   );
 }

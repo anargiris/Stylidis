@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import ProjectLinkIcon from "./ProjectLinkIcon";
 const ProjectComponent = ({ title, img, description, link }) => {
   return (
-    <div className="flex bg-[#323232] dark:bg-zinc-100  text-[#f8f7ff] dark:text-[#323232] p-2.5 rounded-sm">
-      <div className="relative h-32 w-1/4 overflow-hidden">
-        <Image src={img} fill className="object-scale-down object-left-top" />
+    <div className="flex dark:text-[#f8f7ff] text-[#323232] py-2.5 rounded-sm gap-5">
+      <div className="relative w-1/5 overflow-hidden rounded-md">
+        <AspectRatio ratio={16 / 9}>
+          <Image src={img} fill />
+        </AspectRatio>
       </div>
       <div className="flex flex-col flex-1">
         <div className="flex items-center gap-2">

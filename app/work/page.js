@@ -49,12 +49,29 @@ const page = () => {
             img="/project_pictures/Documentor.png"
             description="A web app that lets users create and share documentation easily. Users can do other stuff on it such as do onboarding or provide smooth experiences giving information to people. Still a work in progress but pretty to close to launching it."
             link="https://documentor-smoky.vercel.app/"
-          />{" "}
+          />
           <ProjectComponent
             title="Legacy Portfolio"
-            img="/project_pictures/Documentor.png"
+            img="/project_pictures/Legacy.png"
             description="A portfolio I built aiming at doing some freelancing work while also showcasing some frontend development skills. I used this website on cold emails to clients and as a general portfolio when applying for my first job in tech."
             link="https://stylidis.vercel.app/"
+          />
+        </div>
+      </section>
+      <section className="mt-12 mb-2">
+        <h3 className="text-2xl font-medium border-b border-[#323232] dark:border-[#f8f7ff]">
+          Company
+        </h3>
+        <p className="text-sm mt-2 mb-6">
+          Projects that I worked on as part of a team working on a company and I
+          am allowed{"("}?{")"} to share here.
+        </p>
+        <div className="flex flex-col gap-8">
+          <ProjectComponent
+            title="ANMB"
+            img="/project_pictures/anmb.png"
+            description="A fully fledged web application for a dance organization in Italy. Was part of the frontend team building the website and the cms for the organization while also working with the backend team implementing new features and testing."
+            link="https://anmb.com/"
           />
         </div>
       </section>

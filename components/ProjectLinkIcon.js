@@ -6,13 +6,13 @@ const ProjectLinkIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16px"
-      height="16px"
-      viewBox="0 0 20 20"
+      width="15px"
+      height="15px"
+      viewBox="0 0 21 21"
     >
       <path
         fill="none"
-        stroke={theme === "light" ? "#fff" : "#323232"}
+        stroke={theme === "dark" ? "#fff" : "#323232"}
         stroke-linecap="round"
         stroke-linejoin="round"
         d="M18.5 8.5v-5h-5m5 0l-7 7m-1-7h-5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-4"
