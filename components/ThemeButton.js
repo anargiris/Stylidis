@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { MotionDiv } from "./MotionDiv";
 import { motion } from "framer-motion";
 import SunIcon from "./SunIcon";
 import MoonIcon from "./MoonIcon";
@@ -17,7 +16,7 @@ const ThemeButton = () => {
   const variants = {
     initial: { scale: 0.6, rotate: 60 },
     animate: { scale: 1, rotate: 0, transition },
-    whileTap: { scale: 0.65, rotate: 30 },
+    whileTap: { scale: 0.75, rotate: 25 },
   };
   //This section of the code is to prevent any hydration mismatch errors. Maybe a future version of NextJS fixes this
   const [mounted, setMounted] = useState(false);
