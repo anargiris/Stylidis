@@ -13,8 +13,8 @@ const ProjectLinkIcon = () => {
       <path
         fill="none"
         stroke={theme === "dark" ? "#fff" : "#323232"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M18.5 8.5v-5h-5m5 0l-7 7m-1-7h-5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-4"
       ></path>
     </svg>
