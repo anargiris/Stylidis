@@ -24,10 +24,10 @@ export default function Home() {
         <h2 className="mb-5 text-lg">
           I build web applications and sometimes they don't break.
         </h2>
-        <p className="mb-5 w-2/3">
-          I am a constant follower of the rapidly evolving ecosystem of web
-          development and adapt to the latest changes. My main focus is on the
-          frontend but have good experience on the backend too.
+        <p className="mb-5 w-2/3 font-thin text-zinc-800 dark:text-zinc-100">
+          I enjoy the process of building web applications from the ground up. I
+          believe communication and team work are the keys to successful work so
+          I am trying to be the best possible person someone can work with.
         </p>
         <div>
           <p className="text-sm mb-2">
