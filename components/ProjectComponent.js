@@ -5,7 +5,7 @@ import ProjectLinkIcon from "./ProjectLinkIcon";
 const ProjectComponent = ({ title, img, description, link }) => {
   return (
     <div className="flex dark:text-[#f8f7ff] text-[#323232] py-2.5 rounded-sm gap-5">
-      <div className="relative w-1/5 overflow-hidden rounded-md">
+      <div className="relative w-1/5  overflow-hidden rounded-md">
         <AspectRatio ratio={16 / 9}>
           <Image src={img} fill />
         </AspectRatio>
@@ -19,9 +19,9 @@ const ProjectComponent = ({ title, img, description, link }) => {
         </div>
 
         <p className="text-sm">{description}</p>
-        <ol className="mt-auto flex items-center gap-1">
+        {/* <ol className="mt-auto flex items-center gap-1">
           <li>check</li>
-        </ol>
+        </ol> */}
       </div>
     </div>
   );

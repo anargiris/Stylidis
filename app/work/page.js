@@ -25,24 +25,21 @@ const page = () => {
         },
       }}
     >
-      <h1 className="text-xl font-medium mb-1">
+      <h1 className="text-xl w-2/3 font-medium ">
         Some of the work I have done in my career so far.
       </h1>
-      <h2>
+      <h2 className="mb-5 text-sm text-zinc-700 dark:text-zinc-300">
+        Includes projects I have been part of as a team or as a solo dev.
+      </h2>
+      <h3>
         I am currently{" "}
         <span className="text-indigo-500 dark:text-indigo-400">
           available for hire
         </span>{" "}
         and looking for my next career step.
-      </h2>
+      </h3>
 
       <section className="mt-12 mb-2">
-        <h3 className="text-2xl font-medium border-b border-[#323232] dark:border-[#f8f7ff]">
-          Solo
-        </h3>
-        <p className="text-sm mt-2 mb-6">
-          Solo projects that I am currently building or have built in the past.
-        </p>
         <div className="flex flex-col gap-8">
           <ProjectComponent
             title="Documentor"
@@ -56,24 +53,34 @@ const page = () => {
             description="A portfolio I built aiming at doing some freelancing work while also showcasing some frontend development skills. I used this website on cold emails to clients and as a general portfolio when applying for my first job in tech."
             link="https://stylidis.vercel.app/"
           />
-        </div>
-      </section>
-      <section className="mt-12 mb-2">
-        <h3 className="text-2xl font-medium border-b border-[#323232] dark:border-[#f8f7ff]">
-          Company
-        </h3>
-        <p className="text-sm mt-2 mb-6">
-          Projects that I worked on as part of a team working on a company and I
-          am allowed{"("}?{")"} to share here.
-        </p>
-        <div className="flex flex-col gap-8">
           <ProjectComponent
             title="ANMB"
             img="/project_pictures/anmb.png"
             description="A fully fledged web application for a dance organization in Italy. Was part of the frontend team building the website and the cms for the organization while also working with the backend team implementing new features and testing."
             link="https://anmb.org/"
           />
+          <ProjectComponent
+            title="Chestnut Modifications Business"
+            img="/project_pictures/chestnut.png"
+            description="A project for a local business doing chestnut wood modification deliveries. This was my first real world project and the one where semantic HTML was important, leading to high Google ranking on the main Greek keywords. This has helped the business get more clients from all around Greece and Cyprus."
+            link="https://ksiliaefthimiou.gr/"
+          />{" "}
+          <ProjectComponent
+            title="D4RE"
+            img="/project_pictures/dare.png"
+            description="Real estate web app based in Italy. I was in charge of implenting new features and enhancing existing ones while also refactoring some of the code the old team had written."
+            link="https://www.d4re.com/"
+          />{" "}
+          <ProjectComponent
+            title="House construction business"
+            img="/project_pictures/construction.png"
+            description="Another client project that I worked on as a solo dev. It is a local home construction business that had the need to enter the digital world. Website helped the business reach a wider audience and get more leads."
+            link="https://www.dimitrakoudas.gr/"
+          />
         </div>
+      </section>
+      <section className="mt-10">
+        There is even more projects that I have worked
       </section>
     </MotionDiv>
   );

@@ -22,15 +22,15 @@ const TechnologiesList = () => {
         <Tooltip>
           <TooltipTrigger>
             <Image src="/icons/react.svg" width={20} height={20} />{" "}
-          </TooltipTrigger>{" "}
+          </TooltipTrigger>
           <TooltipContent>
             <span>React</span>
-          </TooltipContent>{" "}
-        </Tooltip>{" "}
+          </TooltipContent>
+        </Tooltip>
         <Tooltip>
           <TooltipTrigger>
             <Image src="/icons/tailwindcss.svg" width={20} height={20} />{" "}
-          </TooltipTrigger>{" "}
+          </TooltipTrigger>
           <TooltipContent>
             <span>Tailwind</span>
           </TooltipContent>{" "}
