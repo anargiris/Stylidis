@@ -71,7 +71,7 @@ const page = () => {
             title="ANMB"
             img="/project_pictures/anmb.png"
             description="A fully fledged web application for a dance organization in Italy. Was part of the frontend team building the website and the cms for the organization while also working with the backend team implementing new features and testing."
-            link="https://anmb.com/"
+            link="https://anmb.org/"
           />
         </div>
       </section>

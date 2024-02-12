@@ -12,7 +12,7 @@ const ProjectComponent = ({ title, img, description, link }) => {
       </div>
       <div className="flex flex-col flex-1">
         <div className="flex items-center gap-2">
-          <h4 className="text-xl font-medium mb-1">{title}</h4>
+          <h4 className="text-xl font-semibold mb-1 ">{title}</h4>
           <Link href={link} target="_blank">
             <ProjectLinkIcon />
           </Link>

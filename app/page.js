@@ -21,9 +21,9 @@ export default function Home() {
         <h1 className="text-2xl font-semibold mb-1">
           Hey, I'm Anargyros. A web developer.
         </h1>
-        <h2 className="mb-5 text-lg">
+        {/* <h2 className="mb-5 text-lg">
           I build web applications and sometimes they don't break.
-        </h2>
+        </h2> */}
         <p className="mb-5 w-2/3 font-thin text-zinc-800 dark:text-zinc-100">
           I enjoy the process of building web applications from the ground up. I
           believe communication and team work are the keys to successful work so
