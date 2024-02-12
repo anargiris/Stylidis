@@ -79,9 +79,6 @@ const page = () => {
           />
         </div>
       </section>
-      <section className="mt-10">
-        There is even more projects that I have worked
-      </section>
     </MotionDiv>
   );
 };

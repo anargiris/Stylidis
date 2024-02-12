@@ -23,12 +23,12 @@ export default function Home() {
           Hey, I'm Anargyros. A web developer.
         </h1>
 
-        <p className="mb-5 w-2/3 font-thin text-zinc-800 dark:text-zinc-100">
+        <p className="mb-5 w-2/3  text-zinc-800 dark:text-zinc-100">
           I enjoy the process of building web applications from the ground up. I
           believe communication and team work are the keys to success so I am
           trying to be the best possible person someone can work with.
         </p>
-        <p className="mb-2.5 w-2/3 font-thin text-zinc-800 dark:text-zinc-100">
+        <p className="mb-2.5 w-2/3  text-zinc-800 dark:text-zinc-100">
           Instead of being a "jack of all trades", I decided to go all in
           becoming proficient using the technologies I enjoy the most.
         </p>
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </section>
       <section className="border-t border-[#323232] dark:border-[#f8f7ff] w-full mt-8 py-1">
-        <h3 className=" text-lg">
+        <h3 className="text-lg">
           I am self taught with professional experience since 2021.
         </h3>
         <p className="w-2/3 mb-1">
