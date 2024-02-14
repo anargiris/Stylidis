@@ -4,21 +4,71 @@ date: 10 February 2024
 description: My first blog is a guide on getting auth up and running in a short time using NextJS and Supabase.
 ---
 
+<div className='dark:text-zinc-200 text-zinc-800'>
 <img src="/blog_post_headers/1.jpg" className="w-full h-[400px] mb-5" />
 
-<h1 className="text-4xl font-bold mb-2 border-b border-[#323232] dark:border-[#f8f7ff]">
+<h1 className="text-4xl text-[#323232] dark:text-[#f8f7ff] font-bold mb-5 pb-2 border-b border-[#323232] dark:border-[#f8f7ff]">
   Setting up Authentication/Authorization in NextJS app router with Supabase
 </h1>
 
-<h2 className="text-2xl font-semibold mb-2">Intro </h2>
-<p>
-  I took the time to write this blog to help people &#40;and myself in the
-  future&#41; setting up auth/authorization in their NextJS/Supabase projects.
+<section className="mb-10 ">
+<h3 className="inline-block text-3xl font-semibold mb-2 ">Intro </h3>
+<p className="mb-2">I took the time to write this blog to help people &#40;and myself in the
+  future&#41; setting up auth/authorization in their NextJS/Supabase projects.</p>
+
+<p className="mb-4">
+  After the NextJS transition to the app router, the paradigm shift has left a
+  lot of people wondering on how to do things correctly. React Server
+  Components, "use client" and the damned hydration errors among others made a
+  lot of devs wonder if they should transition to other solutions
+  &#40;Sveltekit, HTMX, Vue, Angular&#41;.
 </p>
 
-<p>After the NextJS transition to the app router, the paradigm shift has left a lot of people wondering on how to do things correctly. React Server Components, "use client" and the damned hydration errors among others made a lot of devs wonder if they should transition to other solutions &#40;Sveltekit, HTMX, Vue, Angular&#41;.</p>
+<p>
+  For the sake of this tutorial, I am assuming you already have a NextJS project
+  set up together with a Supabase instance. If you don't, here are some links to
+  help you get started:
+</p>
+
+<div className="flex items-center gap-1">
+  <strong>NextJS Getting started:</strong>{" "}
+  <a
+    target="_blank"
+    className="text-indigo-800 dark:text-indigo-300 font-bold"
+    href="https://nextjs.org/learn-pages-router/basics/create-nextjs-app/setup"
+  >
+    Link
+  </a>
+</div>
+
+<div className="flex items-center gap-1">
+<strong>Supabase Getting started:</strong>
+
+<a
+  target="_blank"
+  className="text-indigo-800 dark:text-indigo-300 font-bold"
+  href="https://supabase.com/docs/guides/getting-started"
+>
+  Link
+</a>
+</div>
+</section>
+
+<section>
+<h3 className="inline-block text-3xl font-semibold mb-2">Setting up</h3>
+<div>The Supabase team has been fast in adapting to the app router and created the new <SmallCodeBlock content={"@supabase-ssr"} /> package migrating from their older <SmallCodeBlock content={"@auth-helpers"} />. So let's get started! </div>
+
+<div>Open the terminal in your application and type:</div>
+
+```bash
+npm install @supabase/ssr @supabase/supabase-js
+```
+
+</section>
 ```javascript
 export function myComponent() {
   return <p>test</p>;
 }
 ```
+<div className="my-4"> </div>
+</div>

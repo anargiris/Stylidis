@@ -3,8 +3,8 @@ import path from "path";
 import rehypeHighlight from "rehype-highlight";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getBlogPost } from "@/lib/blog_utils";
-import Image from "next/image";
 import "@/styles/highlight-js/github-dark.css";
+import SmallCodeBlock from "@/components/SmallCodeBlock";
 
 const options = {
   mdxOptions: {
@@ -32,12 +32,19 @@ export async function generateMetadata({ params }) {
   };
 }
 
+const components = {
+  SmallCodeBlock,
+};
 export default function Page({ params }) {
   const props = getBlogPost(params.slug);
   return (
     <div>
       <article className="prose prose-sm md:prose-base lg:prose-lg dark:prose-invert mx-auto ">
-        <MDXRemote source={props.content} options={options} />
+        <MDXRemote
+          source={props.content}
+          options={options}
+          components={components}
+        />
       </article>
     </div>
   );

@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="mb-8">
       <ol className="flex justify-center items-center gap-4">
         {["/", "/work", "/blog", "/contact"].map((link) => {
-          const isActive = link === pathname;
+          const isActive = pathname.startsWith(`${link}/`) || pathname === link;
           return (
             <Link
               key={link}
