@@ -20,7 +20,7 @@ export default function Home() {
     >
       <section>
         <h1 className="text-2xl font-semibold mb-5">
-          Hey, I'm Anargyros. A web developer.
+          Hey, I&apos;m Anargyros. A web developer.
         </h1>
 
         <p className="mb-5 w-2/3  text-zinc-800 dark:text-zinc-100">
@@ -29,8 +29,8 @@ export default function Home() {
           trying to be the best possible person someone can work with.
         </p>
         <p className="mb-2.5 w-2/3  text-zinc-800 dark:text-zinc-100">
-          Instead of being a "jack of all trades", I decided to go all in
-          becoming proficient using the technologies I enjoy the most.
+          Instead of being a jack of all trades, I decided to go all in becoming
+          proficient using the technologies I enjoy the most.
         </p>
         <div>
           <p className="text-sm mb-2">Some of these technologies include:</p>
