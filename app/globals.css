@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 pre {
-  padding: 10px;
   border-radius: 4px;
 }
 @layer base {

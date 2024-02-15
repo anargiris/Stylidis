@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getBlogPost } from "@/lib/blog_utils";
 import "@/styles/highlight-js/github-dark.css";
 import SmallCodeBlock from "@/components/SmallCodeBlock";
+import CodeBlock from "@/components/CodeBlock";
 
 const options = {
   mdxOptions: {
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }) {
 
 const components = {
   SmallCodeBlock,
+  CodeBlock,
 };
 export default function Page({ params }) {
   const props = getBlogPost(params.slug);
