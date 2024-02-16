@@ -15,55 +15,45 @@ const Header = () => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  const itemAnimation = (delay) => {
+    return {
+      initial: {
+        opacity: 0,
+        y: 10,
+      },
+      animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.5,
+          delay: staggerDuration * delay, // No delay for the first item
+        },
+      },
+    };
+  };
   return (
     <header className="h-12 max-w-5xl mx-auto w-full flex items-center justify-between">
       {isMounted && (
         <div className="flex items-center gap-3">
           <MotionDiv
-            initial={{
-              opacity: 0,
-              y: 10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: staggerDuration * 0, // No delay for the first item
-            }}
+            initial="initial"
+            animate="animate"
+            variants={itemAnimation(0)}
           >
             <LinkedIn theme={theme} />
           </MotionDiv>{" "}
           <MotionDiv
-            initial={{
-              opacity: 0,
-              y: 10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: staggerDuration * 2, // No delay for the first item
-            }}
+            initial="initial"
+            animate="animate"
+            variants={itemAnimation(4)}
           >
             <Github theme={theme} />
           </MotionDiv>{" "}
           <MotionDiv
-            initial={{
-              opacity: 0,
-              y: 10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: staggerDuration * 4, // No delay for the first item
-            }}
+            initial="initial"
+            animate="animate"
+            variants={itemAnimation(8)}
           >
             <X theme={theme} />
           </MotionDiv>

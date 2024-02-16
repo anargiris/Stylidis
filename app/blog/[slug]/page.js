@@ -36,6 +36,15 @@ export async function generateMetadata({ params }) {
 const components = {
   SmallCodeBlock,
   CodeBlock,
+  a(props) {
+    return (
+      <a
+        target="_blank"
+        className="text-indigo-500 no-underline font-medium"
+        {...props}
+      />
+    );
+  },
 };
 export default function Page({ params }) {
   const props = getBlogPost(params.slug);
