@@ -64,6 +64,13 @@ export default function Home() {
         . A web app that lets users create documentation or even do onboarding
         easily.
       </section>
+      <section>
+        <h3>I bring small businesses to the digital world</h3>
+        <p>
+          If you need a website for your business, you can{" "}
+          <Link href="/contact">contact</Link> me!
+        </p>
+      </section>
     </MotionDiv>
   );
 }

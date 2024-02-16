@@ -39,6 +39,8 @@ npm install @supabase/ssr @supabase/supabase-js
 </CodeBlock>
 This will install the dependencies we are going to use for our example.
 
+
+### Creating the files
 On the root of you application create a <SmallCodeBlock content={"utils"} /> folder and inside of it create a <SmallCodeBlock content={"supabase"} /> folder. We will then create the files we will need inside. Create the following 3 files inside the supabase folder:
 - client.js
 - server.js
@@ -71,5 +73,43 @@ export const createClient = () =>
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   );
 
+```
+</CodeBlock>
+
+
+ ### server.js
+
+ This will be used when we need to connect to our Supabase database from server components/api routes/server actions. NextJS sends an error if we try to <SmallCodeBlock content={"set"} /> or <SmallCodeBlock content={"remove"} /> the cookies from a server component like shown in the code below. We do not need to worry about it since we will be doing all that from our middleware function in the next steps.
+<CodeBlock>
+```javascript
+import { createServerClient } from "@supabase/ssr";
+
+export const createClient = (cookieStore) => {
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    {
+      cookies: {
+        get(name) {
+          return cookieStore.get(name)?.value;
+        },
+        set(name, value, options) {
+          try {
+            cookieStore.set({ name, value, ...options });
+          } catch (error) {
+              console.log(error)
+          }
+        },
+        remove(name, options) {
+          try {
+            cookieStore.set({ name, value: "", ...options });
+          } catch (error) {
+              console.log(error)
+          }
+        },
+      },
+    }
+  );
+};
 ```
 </CodeBlock>
