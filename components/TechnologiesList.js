@@ -13,7 +13,12 @@ const TechnologiesList = () => {
       <TooltipProvider delayDuration={200}>
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/nextjs.svg" width={20} height={20} />
+            <Image
+              alt="Nextjs Icon"
+              src="/icons/nextjs.svg"
+              width={20}
+              height={20}
+            />
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>NextJS</span>
@@ -21,7 +26,12 @@ const TechnologiesList = () => {
         </Tooltip>{" "}
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/react.svg" width={20} height={20} />{" "}
+            <Image
+              alt="React Icon"
+              src="/icons/react.svg"
+              width={20}
+              height={20}
+            />{" "}
           </TooltipTrigger>
           <TooltipContent>
             <span>React</span>
@@ -29,7 +39,12 @@ const TechnologiesList = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/tailwindcss.svg" width={20} height={20} />{" "}
+            <Image
+              alt="Tailwind Icon"
+              src="/icons/tailwindcss.svg"
+              width={20}
+              height={20}
+            />{" "}
           </TooltipTrigger>
           <TooltipContent>
             <span>Tailwind</span>
@@ -37,7 +52,12 @@ const TechnologiesList = () => {
         </Tooltip>{" "}
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/nodejs.svg" width={20} height={20} />{" "}
+            <Image
+              alt="NodeJS Icon"
+              src="/icons/nodejs.svg"
+              width={20}
+              height={20}
+            />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>NodeJS</span>
@@ -45,7 +65,12 @@ const TechnologiesList = () => {
         </Tooltip>{" "}
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/javascript.svg" width={20} height={20} />{" "}
+            <Image
+              alt="Javascript Icon"
+              src="/icons/javascript.svg"
+              width={20}
+              height={20}
+            />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>Javascript</span>
@@ -53,7 +78,12 @@ const TechnologiesList = () => {
         </Tooltip>{" "}
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/supabase.svg" width={20} height={20} />{" "}
+            <Image
+              alt="Supabase Icon"
+              src="/icons/supabase.svg"
+              width={20}
+              height={20}
+            />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>Supabase</span>
@@ -61,7 +91,12 @@ const TechnologiesList = () => {
         </Tooltip>{" "}
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/vitejs.svg" width={20} height={20} />{" "}
+            <Image
+              alt="ViteJS Icon"
+              src="/icons/vitejs.svg"
+              width={20}
+              height={20}
+            />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>Vite</span>
@@ -69,7 +104,7 @@ const TechnologiesList = () => {
         </Tooltip>{" "}
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/git.svg" width={20} height={20} />{" "}
+            <Image alt="Git Icon" src="/icons/git.svg" width={20} height={20} />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>Git</span>
@@ -77,7 +112,12 @@ const TechnologiesList = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/html5.svg" width={20} height={20} />{" "}
+            <Image
+              alt="HTML5 Icon"
+              src="/icons/html5.svg"
+              width={20}
+              height={20}
+            />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>HTML</span>
@@ -85,7 +125,12 @@ const TechnologiesList = () => {
         </Tooltip>{" "}
         <Tooltip>
           <TooltipTrigger>
-            <Image src="/icons/css.svg" width={20} height={20} />{" "}
+            <Image
+              alt="CSS3 Icon"
+              src="/icons/css.svg"
+              width={20}
+              height={20}
+            />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>CSS</span>

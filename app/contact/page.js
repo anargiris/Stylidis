@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { MotionDiv } from "@/components/Motion/MotionDiv";
 
-const page = () => {
+const Page = () => {
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -50,4 +50,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
