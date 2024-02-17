@@ -7,9 +7,21 @@ import Navbar from "@/components/Navbar";
 const inter = DM_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata = {
+  metadataBase: new URL("https://stylidis.io"),
   title: "Anargyros Stylidis",
-  description:
-    "Personal website of a web developer trying to build apps that don't break.",
+  description: "Personal website of a web developer building apps.",
+  openGraph: {
+    title: "Anargyros Stylidis",
+    description: "Personal website of a web developer building apps.",
+    url: "https://stylidis.io",
+    siteName: "Anargyros Stylidis",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    title: "Anargyros Stylidis",
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }) {

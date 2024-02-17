@@ -6,6 +6,7 @@ import X from "./icons/X";
 import LinkedIn from "./icons/LinkedIn";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 const staggerDuration = 0.03; // 30ms
 const Header = () => {
   const { theme } = useTheme();
@@ -41,21 +42,27 @@ const Header = () => {
             animate="animate"
             variants={itemAnimation(0)}
           >
-            <LinkedIn theme={theme} />
-          </MotionDiv>{" "}
+            <Link target="_blank" href="https://www.linkedin.com/in/astylidis/">
+              <LinkedIn theme={theme} />
+            </Link>
+          </MotionDiv>
           <MotionDiv
             initial="initial"
             animate="animate"
             variants={itemAnimation(4)}
           >
-            <Github theme={theme} />
-          </MotionDiv>{" "}
+            <Link target="_blank" href="https://github.com/anargiris/">
+              <Github theme={theme} />
+            </Link>
+          </MotionDiv>
           <MotionDiv
             initial="initial"
             animate="animate"
             variants={itemAnimation(8)}
           >
-            <X theme={theme} />
+            <Link target="_blank" href="https://twitter.com/AStylidis">
+              <X theme={theme} />
+            </Link>
           </MotionDiv>
         </div>
       )}

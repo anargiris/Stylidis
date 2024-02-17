@@ -18,12 +18,12 @@ const Blog = async () => {
         },
       }}
     >
-      <div>
+      <div className="flex flex-col gap-4">
         {blogs.map((blog) => (
           <Link href={"/blog/" + blog.slug} key={blog.slug}>
             <div className="py-2  flex justify-between items-end gap-2 border-b border-zinc-400">
               <div>
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="text-xl font-semibold mb-2 text-zinc-100">
                   {blog.meta.title}
                 </h3>
                 <p className="text-sm text-zinc-800 dark:text-zinc-200">

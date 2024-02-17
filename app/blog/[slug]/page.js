@@ -29,7 +29,6 @@ export async function generateMetadata({ params }) {
 
   const image = `https://stylidis.io/${metadata.image}`;
 
-  console.log("blog metadata is", image);
   return {
     title: metadata.title,
     description: metadata.description,
