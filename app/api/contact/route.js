@@ -14,7 +14,7 @@ export async function POST(req, res) {
     `;
 
   const data = {
-    to: "stylidisx@gmail.com",
+    to: "klaparas@hotmail.com",
     from: "anargiriss@hotmail.com",
     subject: `New message from Anargyros`,
     text: message,

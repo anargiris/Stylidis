@@ -40,9 +40,9 @@ const CodeBlock = ({ children }) => {
 
   // Fancy text animation
   const textAnimation = {
-    initial: { opacity: 0, y: 0, x: 0, rotate: 0 },
-    animate: { opacity: 1, y: -20, x: 20, rotate: -10 },
-    exit: { opacity: 0, y: -50, x: 50, rotate: -25 },
+    initial: { opacity: 0, y: 0, x: 0, rotate: 0, x: 10 },
+    animate: { opacity: 1, y: -20, x: 10 },
+    exit: { opacity: 0, y: -50, x: 10 },
     transition: { duration: 1, ease: "easeIn" },
   };
 

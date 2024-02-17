@@ -4,7 +4,7 @@ import { MotionDiv } from "@/components/Motion/MotionDiv";
 
 const Page = () => {
   const [formData, setFormData] = useState({
-    email: "",
+    name: "",
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const Page = () => {
     const res = await fetch("/api/contact", {
       method: "POST",
       body: {
-        email: formData.email,
+        name: formData.name,
       },
     });
   };
@@ -34,13 +34,12 @@ const Page = () => {
     >
       <form onSubmit={handleSubmit}>
         <input
-          type="email"
-          name="email"
-          value={formData.email}
+          type="text"
+          value={formData.name}
           onChange={(e) =>
             setFormData({
               ...formData,
-              email: e.target.value,
+              name: e.target.value,
             })
           }
         />
