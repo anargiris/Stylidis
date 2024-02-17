@@ -25,11 +25,33 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const blog = getBlogPost(params.slug);
+  const { frontMatter: metadata } = getBlogPost(params.slug);
 
+  const image = `https://stylidis.io/${metadata.image}`;
+
+  console.log("blog metadata is", image);
   return {
-    title: blog.frontMatter.title,
-    description: blog.frontMatter.description,
+    title: metadata.title,
+    description: metadata.description,
+    publishedAt: metadata.date,
+    openGraph: {
+      title: metadata.title,
+      description: metadata.description,
+      type: "article",
+      publishedTime: metadata.date,
+      url: `https://stylidis.io/blog/${params.slug}`,
+      images: [
+        {
+          url: image,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metadata.title,
+      description: metadata.description,
+      images: [image],
+    },
   };
 }
 
@@ -46,6 +68,7 @@ const components = {
     );
   },
 };
+
 export default function Page({ params }) {
   const props = getBlogPost(params.slug);
   return (
