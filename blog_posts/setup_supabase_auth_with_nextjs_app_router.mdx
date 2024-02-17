@@ -116,6 +116,20 @@ export const createClient = (cookieStore) => {
 ```
 </CodeBlock>
 
+The <SmallCodeBlock content='cookieStore' /> arguement comes from the <SmallCodeBlock content='next/headers' />. On your server component or server-side code you can use it like this
+
+<CodeBlock>
+```javascript
+import { cookies } from "next/headers";
+import { createClient } from "@/utils/supabase/server";
+
+const ExampleServerComponent = () => {
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore);
+}
+```
+</CodeBlock>
+
 
 ### middleware.js
 
