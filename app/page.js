@@ -49,12 +49,13 @@ export default function Home() {
           I am self taught with professional experience since 2021.
         </h3>
         <a
-          href="/Resume.docx"
+          href="/StylidisAnargyros-CV.docx"
+          download="/StylidisAnargyros-CV.docx"
           className="text-indigo-600 dark:text-indigo-400 font-medium"
         >
           Download my resume
         </a>
-      </section>{" "}
+      </section>
       <section className="lg:text-lg lg:w-3/4 mt-3 py-1">
         I am currently building{" "}
         <Link
