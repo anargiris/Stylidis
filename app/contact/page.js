@@ -5,17 +5,25 @@ import { MotionDiv } from "@/components/Motion/MotionDiv";
 const Page = () => {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
+    subject: "",
   });
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     console.log("submited`");
 
-    const res = await fetch("/api/send", {
-      method: "POST",
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
+    } catch (err) {
+      console.log(err);
+    }
 
-    console.log(res);
+    setLoading(false);
   };
 
   const handleChange = (e) => {
@@ -67,10 +75,11 @@ const Page = () => {
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
         <button
+          disabled={loading}
           type="submit"
           className="w-full px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
-          Submit
+          {loading ? "Sending.." : "Submit"}
         </button>
       </form>
     </MotionDiv>
