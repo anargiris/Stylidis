@@ -23,7 +23,7 @@ const Blog = async () => {
           <Link href={"/blog/" + blog.slug} key={blog.slug}>
             <div className="py-2 flex flex-col lg:flex-row justify-between items-end gap-4 lg:gap-2 border-b border-zinc-400">
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-zinc-100">
+                <h3 className="text-xl font-semibold mb-2 text-zinc-800 dark:text-zinc-100">
                   {blog.meta.title}
                 </h3>
                 <p className="text-sm text-zinc-800 dark:text-zinc-200">
