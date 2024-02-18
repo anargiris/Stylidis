@@ -21,7 +21,7 @@ const Blog = async () => {
       <div className="flex flex-col gap-4">
         {blogs.map((blog) => (
           <Link href={"/blog/" + blog.slug} key={blog.slug}>
-            <div className="py-2 flex flex-col lg:flex-col justify-between items-end gap-4 lg:gap-2 border-b border-zinc-400">
+            <div className="py-2 flex flex-col lg:flex-row justify-between items-end gap-4 lg:gap-2 border-b border-zinc-400">
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-zinc-100">
                   {blog.meta.title}

@@ -10,12 +10,16 @@ const Page = () => {
     e.preventDefault();
     console.log("submited`");
 
-    const res = await fetch("/api/contact", {
+    const res = await fetch("/api/send", {
       method: "POST",
-      body: {
-        name: formData.name,
-      },
+      body: JSON.stringify(formData),
     });
+
+    console.log(res);
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   return (
     <MotionDiv
@@ -32,18 +36,42 @@ const Page = () => {
         },
       }}
     >
-      <form onSubmit={handleSubmit}>
+      <h1 className="mb-5 text-center text-2xl font-semibold">Contact me</h1>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
+          name="name"
+          required
           value={formData.name}
-          onChange={(e) =>
-            setFormData({
-              ...formData,
-              name: e.target.value,
-            })
-          }
+          onChange={handleChange}
+          placeholder="Name"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
-        <button type="submit">Submit me</button>
+        <input
+          type="email"
+          name="email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Email"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <textarea
+          rows={6}
+          name="subject"
+          required
+          value={formData.subject}
+          onChange={handleChange}
+          placeholder="Subject"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <button
+          type="submit"
+          className="w-full px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        >
+          Submit
+        </button>
       </form>
     </MotionDiv>
   );
