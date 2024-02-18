@@ -13,4 +13,190 @@ I thought that implementing a simple copy-to-clipboard functionality for code bl
 
 ## My approach
 
-I am using MDX and have installed the <SmallCodeBlock content='next-mdx-remote' /> and the <SmallCodeBlock content='rehype-highlight' /> packages. More info on how I set up my blog [here](https://gaudion.dev/blog/nextjs-mdx-blog)
+I am using MDX and have installed the <SmallCodeBlock content='next-mdx-remote' /> and the <SmallCodeBlock content='rehype-highlight' /> packages. More info on how I set up my blog [here](https://gaudion.dev/blog/nextjs-mdx-blog).
+
+Since this blog is tech based I have the needs of providing code snippets to the readers. The normal MDX code block is pretty good for my use cases, the only tweaks I made is adding a little bit of border-radius and the syntax highlight of the package I mentioned above.
+
+A feature I have seen on nearly all of the tech blog posts is the "copy-to-clipboard" button, usually on the top right of the code block like this:
+
+<CodeBlock>
+```javascript
+const randomFunction = () => {
+    console.log("copy me by clicking the icon on the top right of this block!")
+}
+```
+</CodeBlock>
+
+So I created a custom <SmallCodeBlock content='CodeBlock' /> component, that would accept the children (the actual mdx code block) as props. The first time I tried to use it was like this:
+
+```
+<CodeBlock>
+` ` `
+npm install @supabase/ssr @supabase/supabase-js
+` ` ` 
+</CodeBlock>
+```
+
+Don&apos;t mind the spacing in the ticks above, it is for practical purposes for displaying the code to you. So, the <SmallCodeBlock content='CodeBlock' /> component would accept the <SmallCodeBlock content='children' /> as a prop. On the click of a button, a <SmallCodeBlock content='copyToClipboard'/> function would trigger.
+
+The function would simply do this:
+<CodeBlock>
+```javascript
+ const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(children);
+    } catch (err) {
+      console.error("Failed to copy!", err);
+    }
+  };
+```
+</CodeBlock>
+
+So, that didn&apos;t go as expected. The copied value when I tried to paste it would be <SmallCodeBlock content='[Object Object]' />
+
+After a little bit of tweeking, I found out that the object copied was like this:
+
+<CodeBlock>
+```
+{
+    "type": "pre",
+    "key": null,
+    "ref": null,
+    "props": {
+        "children": {
+            "type": "code",
+            "key": null,
+            "ref": null,
+            "props": {
+                "className": "hljs language-bash",
+                "children": "npm install @supabase/ssr @supabase/supabase-js\n"
+            },
+            "_owner": null,
+            "_store": {}
+        }
+    },
+    "_owner": null,
+    "_store": {}
+}
+```
+</CodeBlock>
+
+Notice that the <SmallCodeBlock content='props' /> has a <SmallCodeBlock content='children' /> property, which in turn has another <SmallCodeBlock content='props' /> in it. And this is for just one line of code! The pattern continues when you add more lines to your MDX code block. We got a bare bones React element represented in JSON format! I am not gonna go too deep on this, but there are a lot of articles covering this subject. I will [link](https://www.zipy.ai/blog/how-react-works-under-the-hood) one of them for you here.
+
+
+## The solution
+
+So I had to destructure this object and create a string representing each line. Even right now writing these lines, I think there could be other solutions for this problem, but here is mine.
+
+By "mine" I mean here is the solution I came up with the help of Chat-GPT. It&apos;s not cheating, go use it for your problems.
+
+<CodeBlock>
+```javascript
+  const extractText = (node) => {
+    if (typeof node === "string") {
+      return node;
+    } else if (React.isValidElement(node) && node.props) {
+      if (Array.isArray(node.props.children)) {
+        return node.props.children.map(extractText).join("");
+      } else {
+        return extractText(node.props.children);
+      }
+    }
+    return "";
+  };
+
+  const codeString = extractText(children);
+```
+</CodeBlock>
+
+The above function checks if the node (in our case, the children we pass as props to our component) is a string then returns it. If not, we check if the node is a React element and if it has props. We proceed to recursively extract the text from the children(check the React element in JSON format above).
+
+And that&apos;s it! Here is the full <SmallCodeBlock content='CodeBlock' /> component that I am using in my blog that you are reading right now. The below CodeBlock component will be rendered to you using the CodeBlock component!
+
+**Small note**: I am using <SmallCodeBlock content='framer-motion' /> for animations, feel free to remove these pieces of code, or use them too if you will.
+<CodeBlock>
+```javascript
+"use client";
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
+const CodeBlock = ({ children }) => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  // Function to recursively extract text from children
+  const extractText = (node) => {
+    if (typeof node === "string") {
+      return node;
+    } else if (React.isValidElement(node) && node.props) {
+      if (Array.isArray(node.props.children)) {
+        return node.props.children.map(extractText).join("");
+      } else {
+        return extractText(node.props.children);
+      }
+    }
+    return "";
+  };
+
+  const codeString = extractText(children);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(codeString);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 500); // Reset the copied state after 2 seconds
+    } catch (err) {
+      console.error("Failed to copy!", err);
+    }
+  };
+
+  // Image transition animations
+  const imageTransition = {
+    opacity: isCopied ? 1 : 0.5,
+    scale: isCopied ? 1.2 : 1,
+    transition: { duration: 0.2 },
+  };
+
+  // Fancy text animation
+  const textAnimation = {
+    initial: { opacity: 0, y: 0, x: 0, rotate: 0, x: 10 },
+    animate: { opacity: 1, y: -20, x: 10 },
+    exit: { opacity: 0, y: -50, x: 10 },
+    transition: { duration: 1, ease: "easeIn" },
+  };
+
+  return (
+    <div className="relative">
+      {children}
+      <motion.img
+        className="absolute top-2 right-2 not-prose cursor-pointer"
+        onClick={() => {
+          if (!isCopied) copyToClipboard();
+        }}
+        src={isCopied ? "/icons/clipboardCheck.svg" : "/icons/clipboard.svg"}
+        animate={imageTransition}
+      />
+
+      <AnimatePresence>
+        {isCopied && (
+          <motion.div
+            className="absolute top-0 right-2 text-sm"
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={textAnimation}
+          >
+            Copied
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export default CodeBlock;
+
+```
+</CodeBlock>
+
+Feel free to use this code in your NextJS/React apps, thanks!
+<div className="pb-5"/>

@@ -16,8 +16,8 @@ const TechnologiesList = () => {
             <Image
               alt="Nextjs Icon"
               src="/icons/nextjs.svg"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
             />
           </TooltipTrigger>{" "}
           <TooltipContent>
@@ -29,8 +29,8 @@ const TechnologiesList = () => {
             <Image
               alt="React Icon"
               src="/icons/react.svg"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
             />{" "}
           </TooltipTrigger>
           <TooltipContent>
@@ -42,8 +42,8 @@ const TechnologiesList = () => {
             <Image
               alt="Tailwind Icon"
               src="/icons/tailwindcss.svg"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
             />{" "}
           </TooltipTrigger>
           <TooltipContent>
@@ -55,8 +55,8 @@ const TechnologiesList = () => {
             <Image
               alt="NodeJS Icon"
               src="/icons/nodejs.svg"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
             />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
@@ -68,8 +68,8 @@ const TechnologiesList = () => {
             <Image
               alt="Javascript Icon"
               src="/icons/javascript.svg"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
             />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
@@ -81,8 +81,8 @@ const TechnologiesList = () => {
             <Image
               alt="Supabase Icon"
               src="/icons/supabase.svg"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
             />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
@@ -94,8 +94,8 @@ const TechnologiesList = () => {
             <Image
               alt="ViteJS Icon"
               src="/icons/vitejs.svg"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
             />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
@@ -104,7 +104,7 @@ const TechnologiesList = () => {
         </Tooltip>{" "}
         <Tooltip>
           <TooltipTrigger>
-            <Image alt="Git Icon" src="/icons/git.svg" width={20} height={20} />{" "}
+            <Image alt="Git Icon" src="/icons/git.svg" width={25} height={25} />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent>
             <span>Git</span>

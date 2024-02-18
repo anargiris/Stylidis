@@ -19,21 +19,26 @@ export default function Home() {
       }}
     >
       <section>
-        <h1 className="text-2xl font-semibold mb-5">
-          Hey, I&apos;m Anargyros. A web developer.
+        <h1 className="text-2xl lg:text-4xl font-semibold mb-5">
+          Hey, I&apos;m Anargyros.{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 dark:from-indigo-200 to-purple-500 dark:to-purple-400 px-2">
+            A web developer
+          </span>
         </h1>
 
-        <p className="mb-5 w-2/3  text-zinc-800 dark:text-zinc-200">
+        <p className="text-base lg:text-xl mb-5 lg:w-2/3  text-zinc-800 dark:text-zinc-200">
           I enjoy the process of building web applications from the ground up. I
           believe communication and team work are the keys to success so I am
           trying to be the best possible person someone can work with.
         </p>
-        <p className="mb-2.5 w-2/3  text-zinc-800 dark:text-zinc-100">
+        <p className="text-base lg:text-xl mb-2.5 lg:w-2/3  text-zinc-800 dark:text-zinc-100">
           When working solo, I build and improve on the technologies that help
           me move fast.
         </p>
         <div>
-          <p className="text-sm mb-2">Some of these technologies include:</p>
+          <p className="text-sm lg:text-base mb-4">
+            Some of these technologies include:
+          </p>
           <TechnologiesList />
         </div>
       </section>
@@ -48,7 +53,7 @@ export default function Home() {
           Download my resume
         </a>
       </section>{" "}
-      <section className="w-3/4 mt-3 py-1">
+      <section className="lg:text-lg lg:w-3/4 mt-3 py-1">
         I am currently building{" "}
         <Link
           target="_blank"
@@ -64,8 +69,11 @@ export default function Home() {
       </section>
       <section className="mt-7">
         <h3 className="text-xl font-semibold leading-8">
-          I bring <span className="bg-indigo-600 px-1">small businesses</span>{" "}
-          to the <span className="bg-indigo-700 px-1">digital world</span>
+          I bring{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-violet-400 px-1">
+            small businesses
+          </span>{" "}
+          to the <span className="bg-indigo-600 px-1">digital world</span>
         </h3>
         <p>
           I can create the website your business deserves so you can share it
