@@ -34,7 +34,7 @@ const Header = () => {
     };
   };
   return (
-    <header className="h-12 max-w-5xl mx-auto w-full flex items-center justify-between">
+    <header className="h-12 mb-5 lg:mb-0 max-w-5xl mx-auto w-full flex items-center justify-between">
       {isMounted && (
         <div className="flex items-center gap-3">
           <MotionDiv

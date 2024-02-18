@@ -1,6 +1,7 @@
 import React from "react";
 import { MotionDiv } from "@/components/Motion/MotionDiv";
 import ProjectComponent from "@/components/ProjectComponent";
+import Link from "next/link";
 
 export const metadata = {
   title: "Work",
@@ -25,12 +26,23 @@ const page = () => {
         },
       }}
     >
-      <h1 className="text-xl w-2/3 font-medium ">
+      <h1 className="text-xl lg:text-2xl lg:w-2/3 font-medium">
         Some of the work I have done in my career so far.
       </h1>
-      <h2 className="mb-5 text-sm text-zinc-700 dark:text-zinc-300">
+      <h2 className="mb-2.5 text-sm text-zinc-700 dark:text-zinc-300">
         Includes projects I have been part of as a team or as a solo dev.
       </h2>
+
+      <p className="mb-5">
+        You can find more of my work in{" "}
+        <Link
+          target="_blank"
+          className="text-medium text-violet-600"
+          href="https://github.com/anargiris"
+        >
+          Github
+        </Link>
+      </p>
       <h3>
         I am currently{" "}
         <span className="text-indigo-500 dark:text-indigo-400">

@@ -26,12 +26,14 @@ export default function Home() {
           </span>
         </h1>
 
-        <p className="text-base lg:text-xl mb-5 lg:w-2/3  text-zinc-800 dark:text-zinc-200">
-          I enjoy the process of building web applications from the ground up. I
-          believe communication and team work are the keys to success so I am
-          trying to be the best possible person someone can work with.
+        <p className="text-base lg:text-lg mb-5 lg:w-2/3  text-zinc-800 dark:text-zinc-200">
+          I enjoy the process of building web applications from the ground up.
+          Constantly searching and evolving in the web dev world, staying up to
+          date with the latest trends. I believe communication and team work are
+          the keys to success so I am trying to be the best possible person
+          someone can work with.
         </p>
-        <p className="text-base lg:text-xl mb-2.5 lg:w-2/3  text-zinc-800 dark:text-zinc-100">
+        <p className="text-base lg:text-lg mb-2.5 lg:w-2/3  text-zinc-800 dark:text-zinc-100">
           When working solo, I build and improve on the technologies that help
           me move fast.
         </p>
