@@ -56,7 +56,7 @@ export default function Home() {
           Download my resume
         </a>
       </section>
-      <section className="lg:text-lg lg:w-3/4 mt-3 py-1">
+      <section className="lg:text-lg lg:w-3/4 mt-3 pt-1 pb-5">
         I am currently building{" "}
         <Link
           target="_blank"
@@ -70,7 +70,7 @@ export default function Home() {
         more functionality. You can check it and even make a subscription in
         test mode.
       </section>
-      <section className="mt-7">
+      {/* <section className="mt-7">
         <h3 className="text-xl font-semibold leading-8">
           I bring{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-violet-400 px-1">
@@ -92,7 +92,7 @@ export default function Home() {
           </Link>{" "}
           me!
         </p>
-      </section>
+      </section> */}
     </MotionDiv>
   );
 }
